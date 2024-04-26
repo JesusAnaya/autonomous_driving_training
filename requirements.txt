@@ -1,0 +1,14 @@
+numpy
+pandas
+tqdm
+tensorflow[add-cuda]==2.15.0
+tensorflow-addons
+jupyter
+jupyterlab
+matplotlib
+Pillow
+opencv-python-headless
+tensorboard
+scikit-learn
+onnx
+tf2onnx

@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  ad_training:
+    image: tensorflow/tensorflow:2.14.0-gpu-jupyter
+    volumes:
+      - ./datasets:/tf/datasets
+      - ./notebooks:/tf/notebooks
+      - ./src:/tf/src
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser --NotebookApp.token=''
+    ports:
+      - 8888:8888
+    runtime: nvidia
+    privileged: true
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
